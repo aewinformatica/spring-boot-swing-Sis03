@@ -47,7 +47,7 @@ public class MainMenuFrame extends JFrame {
     	getContentPane().add(botao_adicionar);
     }
     
-    public JButton getFormsBtn() {
+    public JButton getFormsBtnAdicionar() {
         return botao_adicionar;
     }
     
