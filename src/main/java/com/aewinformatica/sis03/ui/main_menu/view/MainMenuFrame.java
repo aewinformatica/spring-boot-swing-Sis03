@@ -1,7 +1,6 @@
 package com.aewinformatica.sis03.ui.main_menu.view;
 
 import java.awt.GridLayout;
-import java.util.Locale;
 import java.util.ResourceBundle;
 
 import javax.swing.JButton;
@@ -11,6 +10,7 @@ import javax.swing.WindowConstants;
 import org.springframework.stereotype.Component;
 
 import com.aewinformatica.sis03.util.Borders;
+import com.aewinformatica.sis03.util.LocaleUtils;
 import com.aewinformatica.sis03.util.LookAndFeelUtils;
 
 @Component
@@ -20,13 +20,14 @@ public class MainMenuFrame extends JFrame {
 	
 	private JButton botao_adicionar;
 	private String TITLE_MAIN_MENU;
-	private Locale locale;
+	private String BTN_ADD;
 	private ResourceBundle rb;
 	
     public MainMenuFrame() {
-    	locale = new Locale("pt_BR");
-    	rb = ResourceBundle.getBundle("com.aewinformatica.sis03.resources.content", locale);
-    	TITLE_MAIN_MENU = rb.getString("title");
+    	rb = LocaleUtils.getRb();
+    	TITLE_MAIN_MENU = rb.getString("title.MAIN");
+    	        BTN_ADD = rb.getString("Labels.BTN_ADD");
+    	
         setFrameUp();
         initComponents();
         pack();
@@ -43,7 +44,7 @@ public class MainMenuFrame extends JFrame {
     }
     
     private void initComponents() {
-    	botao_adicionar = new JButton("Adicionar");
+    	botao_adicionar = new JButton(BTN_ADD);
     	getContentPane().add(botao_adicionar);
     }
     

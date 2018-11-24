@@ -1,7 +1,6 @@
 package com.aewinformatica.sis03.ui.forms.cliente.view;
 
 import java.awt.BorderLayout;
-import java.util.Locale;
 import java.util.ResourceBundle;
 
 import javax.swing.JFrame;
@@ -10,12 +9,13 @@ import javax.swing.WindowConstants;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import com.aewinformatica.sis03.util.LocaleUtils;
+
 @Component
 public class ClienteFrame extends JFrame{
 
 	private static final long serialVersionUID = 1L;
 	
-	private Locale locale;
 	private ResourceBundle rb;
 
 	private static final int DEFAULT_WIDTH = 750;
@@ -29,8 +29,7 @@ public class ClienteFrame extends JFrame{
 		this.clienteTablePanel = clienteTablePanel;
 		this.tableBtnPanel = tableBtnPanel;
 		
-		locale = new Locale("pt_BR");
-    	rb = ResourceBundle.getBundle("com.aewinformatica.sis03.resources.content", locale);
+    	rb = LocaleUtils.getRb();
 		
 		setFrameUp();
 		initComponents();
@@ -38,7 +37,7 @@ public class ClienteFrame extends JFrame{
     
     
     private void setFrameUp() {
-        setTitle(rb.getString("Labels.CLIENTS"));
+        setTitle(rb.getString("title.CLIENTS"));
         setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
         setSize(DEFAULT_WIDTH, DEFAULT_HEIGHT);
         setLocationRelativeTo(null);

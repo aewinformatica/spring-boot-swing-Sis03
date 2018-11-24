@@ -1,6 +1,7 @@
 package com.aewinformatica.sis03.ui.forms.cliente.view.modal;
 
 import java.awt.GridLayout;
+import java.util.ResourceBundle;
 
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -11,6 +12,7 @@ import org.springframework.stereotype.Component;
 
 import com.aewinformatica.sis03.entity.Cliente;
 import com.aewinformatica.sis03.util.Borders;
+import com.aewinformatica.sis03.util.LocaleUtils;
 
 @Component
 public class FormPanel extends JPanel{
@@ -23,10 +25,15 @@ public class FormPanel extends JPanel{
     private static final int TEXT_FIELD_COLUMNS = 20;
 	
 	private JTextField nomeTF;
+	private ResourceBundle rb;
+	private String LABEL_NAME;
 	
 	
 	@Autowired
     public FormPanel() {
+		rb = LocaleUtils.getRb();
+		LABEL_NAME = rb.getString("Labels.NAME");
+		
         setPanelUp();
         initComponents();
 	}
@@ -36,7 +43,7 @@ public class FormPanel extends JPanel{
         setLayout(new GridLayout(LAYOUT_ROWS, LAYOUT_COLS, HORIZONTAL_GAP, VERTICAL_GAP));
     }
 	private void initComponents(){
-		JLabel nomeLbl = new JLabel("Labels.NAME");
+		JLabel nomeLbl = new JLabel(LABEL_NAME);
 		
 		nomeTF = new JTextField(TEXT_FIELD_COLUMNS);
 		

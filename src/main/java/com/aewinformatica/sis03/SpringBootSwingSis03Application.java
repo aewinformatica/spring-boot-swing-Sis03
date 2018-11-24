@@ -11,6 +11,7 @@ import com.aewinformatica.sis03.util.LookAndFeelUtils;
 public class SpringBootSwingSis03Application {
 
 	public static void main(String[] args) {
+
 		LookAndFeelUtils.setWindowsLookAndFeel();
 		ConfigurableApplicationContext context = SpringApplication.run(SpringBootSwingSis03Application.class,args);
 		

@@ -1,11 +1,14 @@
 package com.aewinformatica.sis03.ui.forms.cliente.view.modal;
 
 import java.awt.BorderLayout;
+import java.util.ResourceBundle;
 
 import javax.swing.JDialog;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+
+import com.aewinformatica.sis03.util.LocaleUtils;
 
 @Component
 public class AddClienteFrame extends JDialog{
@@ -14,6 +17,8 @@ public class AddClienteFrame extends JDialog{
 	
 	private FormPanel formPanel;
     private FormBtnPanel formBtnPanel;
+    private ResourceBundle rb;
+    private String TITLE;
     
     
     @Autowired
@@ -21,13 +26,16 @@ public class AddClienteFrame extends JDialog{
 		this.formPanel = formPanel;
 		this.formBtnPanel = formBtnPanel;
 		
+		rb = LocaleUtils.getRb();
+		TITLE = rb.getString("DialogTitles.CLIENT_MODAL");
+		
         setFrameUp();
         initComponents();
         pack();
 	}
 
 	private void setFrameUp() {
-        setTitle("DialogTitles.CLIENT_MODAL");
+        setTitle(TITLE);
         setDefaultCloseOperation(HIDE_ON_CLOSE);
         setLocationRelativeTo(null);
         setResizable(false);

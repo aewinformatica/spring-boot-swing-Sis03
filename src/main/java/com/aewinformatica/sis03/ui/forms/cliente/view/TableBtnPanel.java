@@ -1,6 +1,5 @@
 package com.aewinformatica.sis03.ui.forms.cliente.view;
 
-import java.util.Locale;
 import java.util.ResourceBundle;
 
 import javax.swing.JButton;
@@ -8,30 +7,35 @@ import javax.swing.JPanel;
 
 import org.springframework.stereotype.Component;
 
+import com.aewinformatica.sis03.util.LocaleUtils;
+
 @Component
 public class TableBtnPanel extends JPanel {
 	
 
 
 	private static final long serialVersionUID = 1L;
-    
-	private Locale locale;
-	private ResourceBundle rb;
-	
+    	
 	private JButton addBtn;
     private JButton removeBtn;
+    private String BTN_ADD;
+    private String BTN_REMOVE;
+    private ResourceBundle rb;
+    
 
     public TableBtnPanel() {
-    	locale = new Locale("pt_BR");
-    	rb = ResourceBundle.getBundle("com.aewinformatica.sis03.resources.content", locale);
+
+    	rb = LocaleUtils.getRb();
+    	BTN_ADD = rb.getString("Labels.BTN_ADD");
+    	BTN_REMOVE = rb.getString("Labels.BTN_REMOVE");
         initComponents();
     }
 
     private void initComponents() {
-        addBtn = new JButton(rb.getString("Labels.ADD_BTN"));
+        addBtn = new JButton(BTN_ADD);
         add(addBtn);
 
-        removeBtn = new JButton(rb.getString("Labels.REMOVE_BTN"));
+        removeBtn = new JButton(BTN_REMOVE);
         add(removeBtn);
     }
 
