@@ -13,7 +13,8 @@ public class LookAndFeelUtils {
 		ResourceBundle rb = LocaleUtils.getRb();
 		
         try {
-            UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
+//            UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
+            UIManager.setLookAndFeel("com.bulenkov.darcula.DarculaLaf");
         } catch (Exception e) {
             JOptionPane.showMessageDialog(
                     null,

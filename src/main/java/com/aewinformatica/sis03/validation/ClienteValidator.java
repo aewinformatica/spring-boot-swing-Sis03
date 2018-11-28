@@ -12,8 +12,8 @@ public class ClienteValidator extends ValidationSupport implements Validator<Cli
 
 		
     @Override
-    public Optional<ValidationError> validate(Cliente client) {
-        if (isNullOrEmptyString(client.getNome())
+    public Optional<ValidationError> validate(Cliente cliente) {
+        if (isNullOrEmptyString(cliente.getNome())
         	
         		) {
 //TODO            return Optional.of(new ValidationError(REQUIRED_DATA_NOT_FILLED_OR_BAD_DATA)); 

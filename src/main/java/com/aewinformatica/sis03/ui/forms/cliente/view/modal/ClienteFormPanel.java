@@ -15,7 +15,7 @@ import com.aewinformatica.sis03.util.Borders;
 import com.aewinformatica.sis03.util.LocaleUtils;
 
 @Component
-public class FormPanel extends JPanel{
+public class ClienteFormPanel extends JPanel{
 
 	private static final long serialVersionUID = 1L;
 	private static final int LAYOUT_ROWS = 6;
@@ -30,7 +30,7 @@ public class FormPanel extends JPanel{
 	
 	
 	@Autowired
-    public FormPanel() {
+    public ClienteFormPanel() {
 		rb = LocaleUtils.getRb();
 		LABEL_NAME = rb.getString("Labels.NAME");
 		

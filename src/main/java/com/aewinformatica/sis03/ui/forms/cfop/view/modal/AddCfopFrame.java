@@ -1,4 +1,4 @@
-package com.aewinformatica.sis03.ui.forms.cliente.view.modal;
+package com.aewinformatica.sis03.ui.forms.cfop.view.modal;
 
 import java.awt.BorderLayout;
 import java.util.ResourceBundle;
@@ -11,23 +11,23 @@ import org.springframework.stereotype.Component;
 import com.aewinformatica.sis03.util.LocaleUtils;
 
 @Component
-public class AddClienteFrame extends JDialog{
+public class AddCfopFrame extends JDialog{
 
 	private static final long serialVersionUID = 1L;
 	
-	private ClienteFormPanel formPanel;
-    private ClienteFormBtnPanel formBtnPanel;
+	private CfopFormPanel formPanel;
+    private CfopFormBtnPanel formBtnPanel;
     private ResourceBundle rb;
     private String TITLE;
     
     
     @Autowired
-    public AddClienteFrame(ClienteFormPanel formPanel,ClienteFormBtnPanel formBtnPanel) {
+    public AddCfopFrame(CfopFormPanel formPanel,CfopFormBtnPanel formBtnPanel) {
 		this.formPanel = formPanel;
 		this.formBtnPanel = formBtnPanel;
 		
 		rb = LocaleUtils.getRb();
-		TITLE = rb.getString("DialogTitles.CLIENT_MODAL");
+		TITLE = rb.getString("DialogTitles.CFOP_MODAL");
 		
         setFrameUp();
         initComponents();
@@ -37,8 +37,9 @@ public class AddClienteFrame extends JDialog{
 	private void setFrameUp() {
         setTitle(TITLE);
         setDefaultCloseOperation(HIDE_ON_CLOSE);
-        setSize(50,50);
-        setLocationRelativeTo(null);
+//        setSize(50,50);
+//        setLocationRelativeTo(null);
+        setBounds(50,50,50,50);
         setResizable(false);
         setModal(true);
     }
@@ -48,11 +49,11 @@ public class AddClienteFrame extends JDialog{
         add(formBtnPanel, BorderLayout.SOUTH);
     }
 	
-    public ClienteFormPanel getFormPanel() {
+    public CfopFormPanel getFormPanel() {
         return formPanel;
     }
 
-    public ClienteFormBtnPanel getFormBtnPanel() {
+    public CfopFormBtnPanel getFormBtnPanel() {
         return formBtnPanel;
     }
 

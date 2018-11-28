@@ -1,4 +1,4 @@
-package com.aewinformatica.sis03.ui.forms.cliente.view;
+package com.aewinformatica.sis03.ui.forms.cfop.view;
 
 import java.awt.BorderLayout;
 import java.util.ResourceBundle;
@@ -12,7 +12,7 @@ import org.springframework.stereotype.Component;
 import com.aewinformatica.sis03.util.LocaleUtils;
 
 @Component
-public class ClienteFrame extends JFrame{
+public class CfopFrame extends JFrame{
 
 	private static final long serialVersionUID = 1L;
 	
@@ -21,12 +21,12 @@ public class ClienteFrame extends JFrame{
 	private static final int DEFAULT_WIDTH = 750;
     private static final int DEFAULT_HEIGHT = 340;
     
-    private ClienteTablePanel clienteTablePanel;
-    private ClienteTableBtnPanel tableBtnPanel;
+    private CfopTablePanel cfopTablePanel;
+    private CfopTableBtnPanel tableBtnPanel;
     
     @Autowired
-	public ClienteFrame(ClienteTablePanel clienteTablePanel, ClienteTableBtnPanel tableBtnPanel) {
-		this.clienteTablePanel = clienteTablePanel;
+	public CfopFrame(CfopTablePanel cfopTablePanel, CfopTableBtnPanel tableBtnPanel) {
+		this.cfopTablePanel = cfopTablePanel;
 		this.tableBtnPanel = tableBtnPanel;
 		
     	rb = LocaleUtils.getRb();
@@ -37,7 +37,7 @@ public class ClienteFrame extends JFrame{
     
     
     private void setFrameUp() {
-        setTitle(rb.getString("title.CLIENTS"));
+        setTitle(rb.getString("title.CFOP"));
         setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
         setSize(DEFAULT_WIDTH, DEFAULT_HEIGHT);
         setLocationRelativeTo(null);
@@ -45,16 +45,16 @@ public class ClienteFrame extends JFrame{
     }
 
     private void initComponents() {
-        add(clienteTablePanel, BorderLayout.CENTER);
+        add(cfopTablePanel, BorderLayout.CENTER);
         add(tableBtnPanel, BorderLayout.SOUTH);
     }
     
-    public ClienteTableBtnPanel getTableBtnPanel() {
+    public CfopTableBtnPanel getTableBtnPanel() {
         return tableBtnPanel;
     }
 
-    public ClienteTablePanel getTablePanel() {
-        return clienteTablePanel;
+    public CfopTablePanel getTablePanel() {
+        return cfopTablePanel;
     }
     
     

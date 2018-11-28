@@ -10,7 +10,7 @@ import org.springframework.stereotype.Component;
 import com.aewinformatica.sis03.util.LocaleUtils;
 
 @Component
-public class FormBtnPanel extends JPanel{
+public class ClienteFormBtnPanel extends JPanel{
 
 	private static final long serialVersionUID = 1L;
 	
@@ -21,7 +21,7 @@ public class FormBtnPanel extends JPanel{
     
     private ResourceBundle rb;
 
-    public FormBtnPanel() {
+    public ClienteFormBtnPanel() {
     	rb = LocaleUtils.getRb();
     	BTN_ADD = rb.getString("Labels.BTN_ADD");
     	BTN_CANCEL = rb.getString("Labels.BTN_CANCEL");

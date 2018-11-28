@@ -14,10 +14,10 @@ import com.aewinformatica.sis03.entity.Cliente;
 import com.aewinformatica.sis03.service.ClienteService;
 import com.aewinformatica.sis03.ui.forms.cliente.model.ClienteTableModel;
 import com.aewinformatica.sis03.ui.forms.cliente.view.ClienteFrame;
-import com.aewinformatica.sis03.ui.forms.cliente.view.TableBtnPanel;
+import com.aewinformatica.sis03.ui.forms.cliente.view.ClienteTableBtnPanel;
 import com.aewinformatica.sis03.ui.forms.cliente.view.modal.AddClienteFrame;
-import com.aewinformatica.sis03.ui.forms.cliente.view.modal.FormBtnPanel;
-import com.aewinformatica.sis03.ui.forms.cliente.view.modal.FormPanel;
+import com.aewinformatica.sis03.ui.forms.cliente.view.modal.ClienteFormBtnPanel;
+import com.aewinformatica.sis03.ui.forms.cliente.view.modal.ClienteFormPanel;
 import com.aewinformatica.sis03.ui.shared.controller.AbstractFrameController;
 import com.aewinformatica.sis03.util.Notifications;
 import com.aewinformatica.sis03.validation.ClienteValidator;
@@ -46,8 +46,8 @@ public class ClienteController extends AbstractFrameController {
 
     @PostConstruct
     private void prepareListeners() {
-        TableBtnPanel tableBtnPanel = clienteFrame.getTableBtnPanel();
-        FormBtnPanel formBtnPanel = addClienteFrame.getFormBtnPanel();
+        ClienteTableBtnPanel tableBtnPanel = clienteFrame.getTableBtnPanel();
+        ClienteFormBtnPanel formBtnPanel = addClienteFrame.getFormBtnPanel();
 
         registerAction(tableBtnPanel.getAddBtn(), (e) -> showAddClienteModal());
         registerAction(tableBtnPanel.getRemoveBtn(), (e) -> removeCliente());
@@ -78,7 +78,7 @@ public class ClienteController extends AbstractFrameController {
     }
     
     private void saveCliente() {
-        FormPanel formPanel = addClienteFrame.getFormPanel();
+        ClienteFormPanel formPanel = addClienteFrame.getFormPanel();
         Cliente cliente = formPanel.getClienteFromForm();
         Optional<ValidationError> errors = clienteValidator.validate(cliente);
         if (errors.isPresent()) {

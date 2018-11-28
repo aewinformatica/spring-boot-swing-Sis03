@@ -7,6 +7,8 @@ public abstract class ValidationSupport {
 	 boolean isNullOrEmptyString(String value) {
 	        return Strings.isNullOrEmpty(value);
 	    }
+	 
+	 
 
 	    boolean isNullValue(Object value) {
 	        return value == null;

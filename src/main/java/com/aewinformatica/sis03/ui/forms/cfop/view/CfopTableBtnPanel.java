@@ -1,4 +1,4 @@
-package com.aewinformatica.sis03.ui.forms.cliente.view;
+package com.aewinformatica.sis03.ui.forms.cfop.view;
 
 import java.util.ResourceBundle;
 
@@ -10,7 +10,7 @@ import org.springframework.stereotype.Component;
 import com.aewinformatica.sis03.util.LocaleUtils;
 
 @Component
-public class TableBtnPanel extends JPanel {
+public class CfopTableBtnPanel extends JPanel {
 	
 
 
@@ -23,7 +23,7 @@ public class TableBtnPanel extends JPanel {
     private ResourceBundle rb;
     
 
-    public TableBtnPanel() {
+    public CfopTableBtnPanel() {
 
     	rb = LocaleUtils.getRb();
     	BTN_ADD = rb.getString("Labels.BTN_ADD");
