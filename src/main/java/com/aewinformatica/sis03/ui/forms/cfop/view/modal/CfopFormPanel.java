@@ -119,12 +119,12 @@ public class CfopFormPanel extends JPanel{
 	 public Cfop getCfopFromForm() {
 		 
 		 Cfop cfop = new Cfop();
-		 cfop.setCfop(Integer.valueOf(cfopTF.getText()));
+		 cfop.setCfop(Long.valueOf(cfopTF.getText()));
 		 cfop.setDescricao(descricaoTF.getText());
 		 cfop.setObservacao(observacaoTF.getText());
 		 cfop.setFaturamento(Boolean.valueOf(faturamentoTF.getText()));
 		 cfop.setFinanceiro(Boolean.valueOf(financeiroTF.getText()));
-		 cfop.setSeqcfop(Integer.valueOf(seqcfopTF.getText()));
+		 cfop.setSeqcfop(Long.valueOf(seqcfopTF.getText()));
 		 cfop.setOperacao(operacaoTF.getText());
 		 
 		 return cfop;

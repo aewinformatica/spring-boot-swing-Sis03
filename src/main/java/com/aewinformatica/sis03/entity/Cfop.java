@@ -7,18 +7,19 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-import org.springframework.stereotype.Component;
+//import org.springframework.stereotype.Component;
 
 @Entity
 @Table(name="cfop")
-@Component
+//@Component
 public class Cfop {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY	)
-	private Integer codigo;
+	private Long codigo;
 	
-	private Integer cfop;
+	@Column
+	private Long cfop;
 	
 	@Column(length=120)
 	private String descricao;
@@ -26,28 +27,42 @@ public class Cfop {
 	private String observacao;
 	@Column(length=1)
 	private String operacao;
-	@Column(length=1)
-    private int seqcfop;
+	@Column(length=1)//OBS O TAMANHA
+    private Long seqcfop;
     
-//    @Column(columnDefinition="tinyint(1) not null",nullable = false)
+    @Column(columnDefinition="tinyint(1) not null",nullable = false)
     private boolean faturamento;
     
-//    @Column(columnDefinition="tinyint(1)")
+    @Column(columnDefinition="tinyint(1)")
     private boolean financeiro;
+    
+	public Cfop() {
+	}
 
-	public Integer getCodigo() {
+	public Cfop(Long cfop, String descricao, String observacao, String operacao, Long seqcfop, boolean faturamento,
+			boolean financeiro) {
+		this.cfop = cfop;
+		this.descricao = descricao;
+		this.observacao = observacao;
+		this.operacao = operacao;
+		this.seqcfop = seqcfop;
+		this.faturamento = faturamento;
+		this.financeiro = financeiro;
+	}
+
+	public Long getCodigo() {
 		return codigo;
 	}
 
-	public void setCodigo(Integer codigo) {
+	public void setCodigo(Long codigo) {
 		this.codigo = codigo;
 	}
 
-	public Integer getCfop() {
+	public Long getCfop() {
 		return cfop;
 	}
 
-	public void setCfop(Integer cfop) {
+	public void setCfop(Long cfop) {
 		this.cfop = cfop;
 	}
 
@@ -75,11 +90,11 @@ public class Cfop {
 		this.operacao = operacao;
 	}
 
-	public int getSeqcfop() {
+	public Long getSeqcfop() {
 		return seqcfop;
 	}
 
-	public void setSeqcfop(int seqcfop) {
+	public void setSeqcfop(Long seqcfop) {
 		this.seqcfop = seqcfop;
 	}
 
@@ -99,7 +114,8 @@ public class Cfop {
 		this.financeiro = financeiro;
 	}
 
-    private String trataString( String wcampo )
+    @SuppressWarnings("unused")
+	private String trataString( String wcampo )
     {
 	char cpo[] = new char[wcampo.length()];
 	int j = 0;
