@@ -33,7 +33,7 @@ public class ImportaCfop {
     	String arqcsv = System.getProperty("user.dir")+System.getProperty("file.separator")+"cfop.csv";
         
     	//JOptionPane.showMessageDialog(null, "Nome do arquivo importado: " + arqcsv );
-    	System.out.println("Nome do arquivo Importado: " + arqcsv );
+    	//System.out.println("Nome do arquivo Importado: " + arqcsv );
     	
     	try{
             input = new Scanner(new File(arqcsv));
@@ -50,11 +50,11 @@ public class ImportaCfop {
 //	List<Cfop>lista = cfopService.findAll();
 //	Optional<Cfop>list = cfops.findById(1);
 	List<Cfop>lista =  cfopRepository.findAll();
-	System.out.println(lista);
+//	System.out.println(lista);
 //	JOptionPane.showMessageDialog(null, lista);
  	
         int qtReg = 0;
-    
+      if(lista.size()==0) {
         try
         {
             String frase = input.nextLine();
@@ -117,7 +117,7 @@ public class ImportaCfop {
                 }
             
             }
-//            JOptionPane.showMessageDialog(null, "Foram Importados " + qtReg + " Registros de CFOP com Sucesso!");//depois mudar de lugar
+            JOptionPane.showMessageDialog(null, "Foram Importados " + qtReg + " Registros de CFOP com Sucesso!");
     }
         catch( NoSuchElementException e)
         {
@@ -129,5 +129,6 @@ public class ImportaCfop {
         	System.err.println("Erro ao ler o arquivo!");
 	System.exit(1);
         }
-    }    
+    } 
+    }
 }
